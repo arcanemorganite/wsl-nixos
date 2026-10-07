@@ -30,6 +30,7 @@ inputs = {
 	  # NixOS configuration entrypoint
 	  nixosConfigurations = {
 		nixos = nixpkgs.lib.nixosSystem {
+		  system = "x86_64-linux";
 		  specialArgs = {inherit inputs;};
 		  modules = with inputs; [
 		  	nixos-wsl.nixosModules.default
