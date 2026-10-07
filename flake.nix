@@ -4,6 +4,9 @@ inputs = {
 	# Nixpkgs
 	nixpkgs.url = "github:nixos/nixpkgs/release-26.05";
 
+	nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+	nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+
 	# Home manager !
 	home-manager = {
 	  url = "github:nix-community/home-manager/release-26.05";
@@ -28,6 +31,10 @@ inputs = {
 		nixos = nixpkgs.lib.nixosSystem {
 		  specialArgs = {inherit inputs;};
 		  modules = with inputs; [
+		  	nixos-wsl.nixosModules.default
+			{
+				wsl.enable = true;
+			};
 			./nixos/configuration.nix
 		  ];
 		};
