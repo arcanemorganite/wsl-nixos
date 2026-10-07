@@ -23,6 +23,7 @@ inputs = {
   outputs = {
 	nixpkgs,
 	home-manager,
+	nixos-wsl,
 	...
 	} @ inputs: let
 	in {
