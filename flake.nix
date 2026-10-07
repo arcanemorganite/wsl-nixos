@@ -34,6 +34,7 @@ inputs = {
 		  	nixos-wsl.nixosModules.default
 			{
 				wsl.enable = true;
+				wsl.defaultUser = "morgan";
 			}
 			./nixos/configuration.nix
 		  ];

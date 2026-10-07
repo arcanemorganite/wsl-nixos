@@ -16,9 +16,6 @@
 	settings.experimental-features = [ "nix-command" "flakes" ];
   };
 
-  wsl.enable = true;
-  wsl.defaultUser = "nixos";
-	  
   users.users.morgan = {
         isNormalUser = true;
         extraGroups = [ "wheel" "networkmanager" ];
