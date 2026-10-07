@@ -34,7 +34,7 @@ inputs = {
 		  	nixos-wsl.nixosModules.default
 			{
 				wsl.enable = true;
-			};
+			}
 			./nixos/configuration.nix
 		  ];
 		};
